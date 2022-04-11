@@ -9,9 +9,7 @@ const STORAGE_KEY = "videoplayer-current-time";
 
 const secondsVimeo = localStorage.getItem(STORAGE_KEY);
 
-if (secondsVimeo) {
-player.setCurrentTime(JSON.parse(secondsVimeo));
-};
+
 
 player.on('timeupdate', throttle(({seconds}) =>{
 
@@ -19,3 +17,6 @@ player.on('timeupdate', throttle(({seconds}) =>{
    
 }, 1000));
 
+if (secondsVimeo) {
+player.setCurrentTime(JSON.parse(secondsVimeo));
+};
